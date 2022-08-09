@@ -80,7 +80,7 @@ def unblock(win):
 
     unblck_wn = Toplevel(win, background='Aquamarine')
     unblck_wn.title("Block a website")
-    unblck_wn.geometry('500x300')
+    unblck_wn.geometry('500x250')
     Label(unblck_wn, text='Unblock websites', background='Aquamarine', font=("Impact", 28)).place(x=125, y=15)
     Label(unblck_wn, text='Select the URLs that you want to unblock:', background='Aquamarine', font=('verdana',
                                                                                                       12)).place(x=75, y=80)
@@ -89,12 +89,11 @@ def unblock(win):
     blck_sites_strvar = StringVar(unblck_wn)
     blck_sites_strvar.set(blck_sites[0])
     dropdown = OptionMenu(unblck_wn, blck_sites_strvar, *blck_sites)
-    dropdown.config(width=20)
-    dropdown.place(x=60, y=100)
+    dropdown.config(width=35)
+    dropdown.place(x=130, y=130)
 
-    submit_btn = Button(unblck_wn, text='Submit', bg='MidnightBlue',
-                        command=lambda: unblock_websites(blck_sites_strvar.get()))
-    submit_btn.place(x=100, y=160)
+    submit_btn = Button(unblck_wn, text='Submit', bg='MidnightBlue',fg="white",width=10,command=lambda: unblock_websites(blck_sites_strvar.get()))
+    submit_btn.place(x=210, y=180)
 
 
 # Creating a GUI master window
@@ -105,15 +104,15 @@ bg=PhotoImage(file="4578691.png")
 label=Label(root,image=bg)
 label.place(x=-10,y=0)
 frame=Frame(root,bg="bisque")
-frame.place(x=250,y=130,width=1030,height=550)
+frame.place(x=250,y=130,width=1000,height=520)
 
 # Creating and setting the locations of all the components of the GUI
 Label(root, text=' Website Blocker',bg="bisque",fg="#000000", font=("impact", 50)).place(x=540, y=230)
 Label(root, text='Select below what do you want to do?',bg="bisque",fg="gray20", font=("verdana", 14)).place(x=595, y=390)
 
-Button(root, text='Block a Website', font=('verdana', 11),cursor="hand2", bg= "red",width=20,height=2, command=lambda: block(root)).place(x=480, y=500)
+Button(root, text='Block a Website', font=('verdana', 11),cursor="hand2", bg= "red",width=20,height=2, command=lambda: block(root)).place(x=480, y=480)
 
-Button(root, text='Unblock a Website', font=('verdana', 11), bg="green",cursor="hand2" ,width=20,height=2,command=lambda: unblock(root)).place(x=880, y=500)
+Button(root, text='Unblock a Website', font=('verdana', 11), bg="green",cursor="hand2" ,width=20,height=2,command=lambda: unblock(root)).place(x=880, y=480)
 
 root.update()
 root.mainloop()
