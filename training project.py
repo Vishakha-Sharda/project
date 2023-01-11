@@ -103,6 +103,7 @@ root.geometry('1920x1080')
 bg=PhotoImage(file="4578691.png")
 label=Label(root,image=bg)
 label.place(x=-10,y=0)
+
 frame=Frame(root,bg="bisque")
 frame.place(x=250,y=130,width=1000,height=520)
 
